@@ -1,0 +1,180 @@
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 60px;
+  margin: 20px auto;
+  padding: 0.5rem 2.5rem;
+  min-width: 20%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 1000px;
+}
+
+/* Navbar link */
+.navbar .nav-link {
+  font-weight: 600;
+  color: white !important;
+  margin-right: 15px;
+}
+
+/* Social icons */
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+/* Active link lebih bold dan ada efek glow dikit */
+.navbar .nav-link.active {
+  font-weight: 720; /* lebih bold */
+  color: #fff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* efek glow halus */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('assets/BGNavy.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+
+/* ======================================= */
+/* ===== STYLE UNTUK PROJECT DETAIL PAGE ===== */
+/* ======================================= */
+
+.project-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 5%; /* Padding atas-bawah dan samping */
+    max-width: 1400px;
+    margin: 0 auto; /* Tengahin container */
+    align-items: flex-start; /* Konten rata atas */
+    text-align: left; /* Teks rata kiri */
+}
+
+/* Kolom Kiri - Galeri/Carousel */
+.project-gallery {
+    flex: 1; /* Biarkan fleksibel */
+    min-width: 300px; /* Lebar minimal */
+    max-width: 60%; /* Lebar maksimal */
+}
+
+.project-gallery .carousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.project-gallery .carousel-item img {
+    aspect-ratio: 16 / 10; /* Rasio gambar persegi panjang */
+    object-fit: cover;
+}
+
+/* Kolom Kanan - Info Proyek */
+.project-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-info h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.15); /* Warna default atau fallback */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff; /* Tambahkan warna teks agar konsisten */
+    margin-right: 8px; /* Tambahkan sedikit jarak antar tag */
+}
+
+/* Kelas untuk warna tag yang berbeda */
+.tag-blue {
+    background: #007bff; /* Biru */
+}
+
+.tag-green {
+    background: #28a745; /* Hijau */
+}
+
+.tag-orange {
+    background: #ffc107; /* Oranye */
+    color: #333; /* Ubah warna teks agar kontras dengan latar belakang terang */
+}
+
+.tag-purple {
+    background: #6f42c1; /* Ungu */
+}
+
+.tag-grey {
+    background: #6c757d; /* Abu-abu */
+}
+
+/* Jika Anda ingin opacity yang sama seperti default Anda */
+.tag-blue-alpha {
+    background: rgba(0, 123, 255, 0.15);
+    color: #007bff; /* Teks warna biru */
+}
+.tag-green-alpha {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28a745; /* Teks warna hijau */
+}
+/* ...dan seterusnya untuk warna lain jika ingin efek transparansi */
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Penyesuaian untuk layar kecil */
+@media (max-width: 992px) {
+    .project-detail-container {
+        padding: 40px 20px;
+    }
+    .project-info h1 {
+        font-size: 2.2rem;
+    }
+    .project-gallery {
+        max-width: 100%;
+    }
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

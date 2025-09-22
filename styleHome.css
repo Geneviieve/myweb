@@ -1,0 +1,786 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('assets/BGNavy.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 6rem;   /* geser ke bawah */
+  padding-bottom: 4rem; 
+}
+
+.hero h1 {
+  font-size: 3.2rem; /* scale up */
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero h3 {
+  font-size: 1.5rem; /* lebih kecil dari h1 */
+  display: inline-block;
+  margin-top: 15px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+.hero-row {
+  position: relative; /* Beberapa browser memerlukan ini agar transform bekerja dengan baik */
+  transform: translateX(10%); /* Geser ke kanan sebesar 3% dari lebarnya sendiri */
+}
+
+
+.animated-photo-stack {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-photo-stack .hero-image-transparent {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  height: auto;
+  /* BARIS ANIMASI FOTO DIHAPUS DARI SINI */
+}
+
+.animated-photo-stack .shape {
+  position: absolute;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.animated-photo-stack .shape-1 {
+  width: 320px;
+  height: 320px;
+  background-color: rgba(252, 178, 167, 0.2);
+  border-radius: 50%;
+  z-index: 1;
+  animation: animateShape1 8s infinite ease-in-out;
+}
+
+.animated-photo-stack .shape-2 {
+  width: 380px;
+  height: 380px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  animation: animateShape2 10s infinite ease-in-out;
+}
+
+/* Pastikan foto di dalam wrapper mengisi penuh */
+.image-fade-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+}
+
+.image-fade-wrapper {
+  position: relative; /* Untuk memposisikan pseudo-element */
+  z-index: 3; /* Pastikan di atas bentuk-bentuk */
+  max-width: 100%; /* Batasi lebar wrapper */
+  height: auto; /* Tinggi menyesuaikan gambar */
+  /* Efek gradasi transparan di bagian bawah */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Jika Anda ingin menambahkan sedikit shadow di bawah sebagai alternatif */
+
+.image-fade-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; 
+  background: linear-gradient(to top, var(--background-color) 0%, transparent 100%);
+  z-index: 4; 
+}
+
+
+/* === Keyframes untuk Animasi Hiasan (TIDAK PERLU DIUBAH) === */
+
+/* Keyframe floatImage tidak akan terpakai lagi, tapi tidak masalah jika tidak dihapus */
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes animateShape1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, -15px) scale(1.05); }
+}
+
+@keyframes animateShape2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    transform: translate(-15px, 15px);
+    border-radius: 70% 30% 40% 60% / 60% 70% 50% 40%;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Navbar Glass Capsule */
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 60px;
+  margin: 20px auto;
+  padding: 0.5rem 2.5rem; /* lebih lega kiri kanan */
+  min-width: 20%;         /* navbar lebih panjang, adjust sesuai selera */
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 60%;  /* panjang kapsul */
+  max-width: 1000px; /* biar nggak terlalu melebar di layar gede */
+}
+
+
+/* Navbar link */
+.navbar .nav-link {
+  font-weight: 600;
+  color: white !important;
+  margin-right: 15px;
+}
+
+/* Social icons */
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  object-fit: cover;   /* biar isi pas tanpa ketarik */
+  margin-left: 10px;
+}
+
+
+/* Active link lebih bold dan ada efek glow dikit */
+.navbar .nav-link.active {
+  font-weight: 720; /* lebih bold */
+  color: #fff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* efek glow halus */
+}
+
+
+/* Tools icons */
+.tool-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* biar putih kalau icon default gelap */
+  transition: transform 0.2s;
+}
+
+.tool-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.highlight {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+  margin-bottom: 3rem; 
+}
+
+/* Garis di bawah judul (opsional, bisa dihapus jika tidak suka) */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: rgba(252, 178, 167, 0.5);
+  border-radius: 2px;
+  margin: 1rem auto 0;
+}
+
+.highlight-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  background: rgba(252, 178, 167, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 2.2rem;
+  width: 480px;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  /* margin: 0 12px; <-- DIHAPUS karena sudah ada 'gap' di container */
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.highlight-card h3 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.highlight-card p {
+  min-height: 50px;
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Carousel Styling --- */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-top: auto; /* Ini penting untuk alignment vertikal */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%; /* <-- Ini yang akan membuat gambar pas */
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Blok .carousel img DIHAPUS karena menyebabkan konflik */
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  border-radius: 0 0 20px 20px;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel button:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Typo DIPERBAIKI: highligh -> highlight */
+  .highlight-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Menimpa gaya default tombol carousel di dalam highlight-card */
+.highlight-card .carousel-control-prev,
+.highlight-card .carousel-control-next {
+  /* Mengubah ukuran dan bentuk */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Membuatnya bulat */
+  
+  /* Mengubah tampilan */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  
+  /* Menengahkan panah di dalamnya */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Menghapus background gradasi default */
+  background-image: none;
+  
+  transition: opacity 0.2s ease;
+}
+
+/* Mengatur posisi tombol */
+.highlight-card .carousel-control-prev {
+  left: 15px; /* Jarak dari kiri */
+}
+
+.highlight-card .carousel-control-next {
+  right: 15px; /* Jarak dari kanan */
+}
+
+/* Efek saat di-hover */
+.highlight-card .carousel-control-prev:hover,
+.highlight-card .carousel-control-next:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+/* ===== CSS UNTUK HARD SKILL ===== */
+/* ================================ */
+
+/* Container untuk seluruh section */
+.skills-section {
+  padding: 6rem 0; /* Jarak atas-bawah */
+  overflow: hidden; /* Mencegah glow keluar aneh */
+}
+
+/* Pembungkus judul di kolom kiri */
+.skills-title-wrapper {
+  text-align: right; /* Membuat teks rata kanan, menunjuk ke ikon */
+  position: relative;
+}
+
+/* Teks kecil "hard" */
+.skills-subtitle {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Warna glow yang senada dengan tema */
+  color: rgba(252, 178, 167, 0.9);
+  text-shadow: 0 0 15px rgba(252, 178, 167, 0.7), 
+               0 0 25px rgba(252, 178, 167, 0.5);
+
+  margin-bottom: -1rem; /* Menarik judul utama lebih dekat */
+}
+
+/* Judul besar "Skills" */
+.skills-title {
+  font-size: 6rem; /* Ukuran yang besar dan mencolok */
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Grid untuk ikon-ikon di kolom kanan */
+.skills-icon-grid {
+  display: flex;
+  flex-wrap: wrap; /* Ikon akan turun ke baris baru jika tidak muat */
+  gap: 2.5rem; /* Jarak antar ikon */
+  justify-content: flex-start; /* Mulai dari kiri */
+  padding-left: 2rem; /* Jarak dari judul */
+}
+
+/* Styling untuk setiap ikon */
+.skill-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain; /* Memastikan ikon tidak gepeng */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efek hover pada ikon */
+.skill-icon:hover {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Pembungkus untuk setiap kategori skill */
+.skill-category {
+  margin-bottom: 0.4rem; /* Memberi jarak antar baris kategori */
+}
+
+/* Sedikit penyesuaian pada grid ikon */
+.skills-icon-grid {
+  padding-left: 0; /* Hapus padding-left dari sini agar ikon rata dengan judul kategori */
+}
+
+/* --- Pembungkus Icon Item --- */
+
+/* Pembungkus Icon Item */
+.skill-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* DIKECILKAN: dari 100px menjadi 85px */
+  width: 65px;
+  height: 65px;
+
+  /* SUDUT LEBIH LANCIP: dari 18px menjadi 14px */
+  border-radius: 10px;
+  
+  /* Efek Liquid Glass (tetap sama) */
+  background: rgba(224, 217, 217, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  transition: all 0.4s ease-in-out;
+}
+
+/* Ikon di dalam Box */
+.skill-item .skill-icon {
+  /* DIKECILKAN: dari 50px menjadi 40px agar pas */
+  width: 45px;
+  height: 45px;
+  
+  object-fit: contain;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Efek HOVER */
+.skill-item:hover {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: translateY(-5px) rotate(5deg); 
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2) rotate(-5deg); 
+}
+
+/* Grid Ikon */
+.skills-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  
+  /* DIBUAT LEBIH RAPAT: dari 1.5rem menjadi 1rem */
+  gap: 0.4rem; 
+  
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+
+/* ================================ */
+/* ===== CSS UNTUK SOFT SKILL ===== */
+/* ================================ */
+
+/* Container untuk seluruh section */
+.soft-skills-marquee-section {
+  padding-top: 0; 
+  padding-bottom: 6rem; 
+  text-align: center;
+  /* Ganti dari visible menjadi hidden */
+}
+
+/* Pembungkus judul */
+.soft-skills-marquee-section .marquee-title-wrapper {
+  position: relative; 
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+/* Judul "Skills" */
+.soft-skills-marquee-section .skills-title {
+  padding-top: 1rem;
+}
+
+/* Subtitle "soft" */
+.soft-skills-marquee-section .skills-subtitle {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: rotate(-15deg); 
+  transform-origin: bottom left;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(252, 178, 167, 0.9);
+  text-shadow: 0 0 15px rgba(252, 178, 167, 0.7);
+}
+
+/* Container luar untuk marquee */
+.marquee-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Jarak antara dua baris */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  overflow: hidden; 
+}
+
+/* Trek yang akan bergerak */
+.marquee-track {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  animation: marqueeAnimation 40s linear infinite;
+}
+
+/* Trek KEDUA yang bergerak ke arah sebaliknya */
+.marquee-track--reverse {
+  animation-name: marqueeAnimationReverse;
+}
+
+/* Keyframes untuk animasi normal (ke kiri) */
+@keyframes marqueeAnimation {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+/* Keyframes BARU untuk animasi sebaliknya (ke kanan) */
+@keyframes marqueeAnimationReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+/* Menghentikan animasi saat di-hover */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Styling untuk tag */
+.soft-skill-tag {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* ================================ */
+/* ===== CSS UNTUK CTA ===== */
+/* ================================ */
+
+.cta-section {
+  padding: 4rem 0; /* Padding sedikit dikurangi */
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 4rem 0;
+}
+
+/* Judul Glowing BARU */
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  
+  /* Efek Glow dengan warna aksen */
+  text-shadow: 0 0 15px rgba(252, 178, 167, 0.6),
+               0 0 25px rgba(252, 178, 167, 0.4);
+}
+
+/* Styling Tombol (tetap sama) */
+.cta-button {
+  display: inline-block;
+  background-color: rgba(252, 178, 167, 0.8);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(252, 178, 167, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #FCB2A7;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(252, 178, 167, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+/* ===== CSS UNTUK CONTACT ===== */
+/* ================================ */
+
+
+
+
+
+
+.contact-section {
+  padding: 6rem 0;
+}
+
+/* Wrapper for the social links */
+.social-links-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Jarak antar ikon */
+  margin-top: 2rem;
+}
+
+/* Styling for each link/icon */
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-link img {
+  width: 48px; /* Ukuran ikon */
+  height: 48px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Efek saat ikon di-hover */
+.social-link:hover {
+  transform: translateY(-5px);
+}
+
+.social-link:hover img {
+  opacity: 1;
+}
+
+
+
+
+
+/*MUSE*/
+
+.site-footer {
+  /* Memberi jarak yang cukup dari section contact di atasnya */
+  /* dan sedikit padding di bawah untuk ruang napas */
+  padding: 1rem 0 4rem 0;
+}
+
+.muse-portfolio-link {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.muse-portfolio-link:hover {
+  color: #fff;
+}
