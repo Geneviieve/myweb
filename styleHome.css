@@ -784,3 +784,35 @@ body {
 .muse-portfolio-link:hover {
   color: #fff;
 }
+
+
+
+/* =========================== */
+/* === Custom Scrollbar CSS === */
+/* =========================== */
+
+/* For WebKit browsers (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: 8px; /* Makes the scrollbar thinner */
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1424; /* Color of the track, matching your dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(252, 178, 167, 0.6); /* Your accent color, semi-transparent */
+  border-radius: 10px; /* Makes the thumb rounded */
+  border: 2px solid #0D1424; /* Creates padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(252, 178, 167, 0.9); /* Accent color becomes more solid on hover */
+}
+
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Options: 'auto', 'thin', 'none' */
+  scrollbar-color: rgba(252, 178, 167, 0.6) #0D1424; /* thumb color track color */
+}
