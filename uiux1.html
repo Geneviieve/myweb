@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Project 1 - My Portfolio</title>
+    <title>Case Study: Grevur - My Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleUIUX.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,9 +21,10 @@
                     <!-- class="active" DIHAPUS DARI SINI -->
                     <a class="nav-link fw-semibold" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
-                    <!-- class="active" DITAMBAHKAN DI SINI -->
-                    <a class="nav-link fw-semibold active" href="portfolio.html">Portfolio</a>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Grevur</span>
                 </li>
             </ul>
 
@@ -41,71 +43,150 @@
 
     <main id="swup" class="transition-fade">
 
-        <div class="project-detail-container">
-            <div class="project-gallery">
-                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+        <header class="project-hero container-fluid">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 project-hero-img">
+                        <div id="heroProjectCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#heroProjectCarousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#heroProjectCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#heroProjectCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="portfodetails/uiuxpreGre1.png" class="d-block w-100"
+                                        alt="Grevur Showcase 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="portfodetails/uiuxpreGre2.png" class="d-block w-100"
+                                        alt="Grevur Showcase 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="portfodetails/uiuxpreGre3.png" class="d-block w-100"
+                                        alt="Grevur Showcase 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroProjectCarousel"
+                                data-bs-slide="prev">
+                                &#10094; </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroProjectCarousel"
+                                data-bs-slide="next">
+                                &#10095; </button>
+                        </div>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/uiuxGrevur.png" class="d-block w-100" alt="Project image 1">
+                    <div class="col-lg-6 project-hero-text">
+                        <span class="tag-case-study">Case Study</span>
+                        <h1>Grevur, Circular Economy App</h1>
+                        <p class="lead">Merging secondhand trading with waste desposit rewards to make sustainable living simple and rewarding.</p>
+                        <div class="project-meta">
+                            <span><strong>Role:</strong> UI/UX Designer</span>
+                            <span><strong>Year:</strong> 2025</span>
                         </div>
-                        <div class="carousel-item">
-                            <img src="assets/uiuxnarraitive.png" class="d-block w-100" alt="Project image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/uiuxGrevur.png" class="d-block w-100" alt="Project image 3">
+
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">User Research</span>
+                            <span class="tag">Mobile Design</span>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
+        </header>
 
-            <div class="project-info">
-                <h1>Grevur, Circular Economy App (UI/UX Case Study)</h1>
-                <div class="project-meta">
-                    <span><strong>Role:</strong> UI/UX Designer</span>
-                    <span><strong>Year:</strong> 2025</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag tag-orange">Figma</span>
-                    <span class="tag tag-purple">User Research</span>
-                    <span class="tag tag-blue-alpha">Mobile Design</span>
-                </div>
-                <p class="project-description">
-                    Co-designed Grevur, a mobile app concept that promotes sustainable living through secondhand trading and waste deposit rewards. The team developed a prototype that allows users to exchange used goods or deposit recyclable waste in return for redeemable points. Integrated AI features such as a carbon impact estimator and an eco-assistant chatbot to enhance user engagement and promote informed sustainability choices.
-                </p>
+        <div class="project-content container">
 
+            <section class="case-study-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Context & Problem</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>In Indonesia, waste sorting habits remain low, while secondhand trading is fragmented. People
+                            want to live more sustainably, but the process often feels inconvenient and unrewarding.</p>
+                        <div class="stat-highlight">
+                            <div class="stat-item">
+                                <h3>Low</h3>
+                                <span>Waste Sorting Habits</span>
+                            </div>
+                            <div class="stat-item">
+                                <h3>Fragmented</h3>
+                                <span>Secondhand Market</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Research & Insights</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>Through desk research and user interviews, we found a key insight: people are willing to
+                            trade used items but see no direct benefit in sorting waste. This led us to a core idea:</p>
+                        <blockquote class="insight-quote">
+                            "What if we connect these two behaviors with a clear, unified incentive?"
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section text-center">
+                <h2>The Solution: Three Core Pillars</h2>
+                <p class="lead text-white-50 mx-auto" style="max-width: 700px;">We designed Grevur to be a friendly,
+                    transparent, and motivating app built on three pillars to encourage sustainable habits.</p>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <img src="icons/Group.png" alt="Goods Exchange Icon" class="pillar-icon">
+                            <h4>Goods Exchange</h4>
+                            <p>A secondhand marketplace for trading items.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <img src="icons/Check.png" alt="Waste2Points Icon" class="pillar-icon">
+                            <h4>Waste2Points</h4>
+                            <p>A waste deposit system with redeemable points.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <img src="icons/Wash.png" alt="Eco-AI Assistant Icon" class="pillar-icon">
+                            <h4>Eco-AI Assistant</h4>
+                            <p>An AI chatbot and impact estimator to guide users.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section text-center">
+                <h2>Final Designs & Outcome</h2>
+                <p class="lead text-white-50 mx-auto" style="max-width: 900px;">Using Figma, we created high-fidelity
+                    prototypes that received positive feedback, confirming our design direction of "one app for both
+                    selling and recycling."</p>
+                <div class="final-gallery">
+                    <img src="portfodetails/uiuxGre1.png" alt="Final App Screen 1">
+                    <img src="portfodetails/uiuxGre2.png" alt="Final App Screen 2">
+                    <img src="portfodetails/uiuxGre3.png" alt="Final App Screen 3">
+                </div>
+            </section>
+
+            <div class="text-center mt-5">
                 <a href="portfolio.html" class="back-link">← Back to All Projects</a>
             </div>
-        </div>
 
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
-    <script src="https://unpkg.com/swup@4"></script>
-    <script src="https://unpkg.com/@swup/scripts-plugin@3"></script>
-    <script>
-        const swup = new Swup({
-            plugins: [new SwupScriptsPlugin()]
-        });
-    </script>
 </body>
 
 </html>

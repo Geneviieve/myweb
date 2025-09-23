@@ -37,6 +37,21 @@
     /* efek glow halus */
 }
 
+/* Styling untuk breadcrumb di navbar */
+.breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.5);
+    /* Warna pemisah yang lebih redup */
+    margin: 0 0.3rem;
+    /* Jarak kiri-kanan */
+}
+
+.breadcrumb-current {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    /* Warna teks untuk halaman saat ini */
+    /* Tidak bisa diklik, jadi tidak ada efek hover */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: url('assets/BGNavy.png') no-repeat center center fixed;
@@ -44,160 +59,251 @@ body {
     margin: 0;
     color: white;
     text-align: center;
+    padding-bottom: 4rem;
 }
 
 
-/* ======================================= */
-/* ===== STYLE UNTUK PROJECT DETAIL PAGE ===== */
-/* ======================================= */
+/* =========================== */
+/* === Project Detail Page === */
+/* =========================== */
 
-.project-detail-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 60px 5%;
-    /* Padding atas-bawah dan samping */
-    max-width: 1400px;
-    margin: 0 auto;
-    /* Tengahin container */
-    align-items: flex-start;
-    /* Konten rata atas */
-    text-align: left;
-    /* Teks rata kiri */
+/* Project Hero (Bagian Atas) */
+.project-hero {
+    padding: 6rem 0 3rem 0;
 }
 
-/* Kolom Kiri - Galeri/Carousel */
-.project-gallery {
-    flex: 1;
-    /* Biarkan fleksibel */
-    width: 400px;
-    
-}
-
-.project-gallery .carousel {
+.project-hero-img img {
+    width: 100%;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-.project-gallery .carousel-item img {
-    aspect-ratio: 4 / 3;
-    /* Rasio gambar persegi panjang */
-    object-fit: cover;
+.project-hero-text {
+    text-align: left;
 }
 
-/* Kolom Kanan - Info Proyek */
-.project-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.project-info h1 {
-    font-size: 2.8rem;
+.project-hero-text h1 {
+    font-size: 3rem;
     font-weight: 700;
+}
+
+.project-hero-text .lead {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 1rem 0 2rem 0;
+}
+
+.tag-case-study {
+    background: rgba(252, 178, 167, 0.8);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
     margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem; /* Jarak dari baris "Role/Year" */
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Styling untuk Carousel di Hero Section */
+.project-hero-img .carousel {
+    border-radius: 15px;
+    /* Sesuaikan dengan gambar di dalamnya */
+    overflow: hidden;
+    /* Penting agar gambar di dalam ikut membulat */
+
+    /* Efek bayangan yang halus */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Memastikan gambar di dalam carousel juga membulat */
+.project-hero-img .carousel-item img {
+    border-radius: 15px;
+    aspect-ratio: 4 / 3;
+    /* Atur rasio gambar jika perlu */
+    object-fit: cover;
 }
 
 .project-meta {
     display: flex;
     gap: 24px;
-    margin-bottom: 1.5rem;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
-.project-tags {
+
+.project-hero-img .carousel-control-prev,
+.project-hero-img .carousel-control-next {
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+/*                                                   */
+
+.case-study-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.case-study-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* Posisikan di paling bawah section */
+    left: 50%;
+    /* Mulai dari tengah */
+    transform: translateX(-50%);
+    /* Pastikan pas di tengah */
+
+    width: 70%;
+    /* Lebar separator */
+    height: 2px;
+    /* Ketebalan separator */
+
+    /* Efek gradasi dengan warna aksenmu */
+    background: linear-gradient(to right,
+            transparent,
+            rgba(252, 178, 167, 0.4),
+            transparent);
+}
+
+/* Hapus garis pada section paling terakhir */
+.case-study-section:last-of-type::after {
+    display: none;
+}
+
+.case-study-section:last-of-type {
+    border-bottom: none;
+}
+
+.case-study-section h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Stat Highlight */
+/* Container for the stat boxes */
+.stat-highlight {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    /* Center the text inside the boxes */
 }
 
-.tag {
-    background: rgba(255, 255, 255, 0.15);
-    /* Warna default atau fallback */
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #fff;
-    /* Tambahkan warna teks agar konsisten */
-    margin-right: 8px;
-    /* Tambahkan sedikit jarak antar tag */
+/* Styling for each stat box */
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    /* Soft background color */
+    padding: 1.5rem;
+    border-radius: 12px;
+    /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+    /* Makes both boxes equal width */
 }
 
-/* Kelas untuk warna tag yang berbeda */
-.tag-blue {
-    background: #007bff;
-    /* Biru */
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FCB2A7;
+    /* Accent color */
+    margin-bottom: 0.5rem;
+    /* Space between number and text */
 }
 
-.tag-green {
-    background: #28a745;
-    /* Hijau */
+.stat-item span {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.tag-orange {
-    background: #ffc107;
-    /* Oranye */
-    color: #333;
-    /* Ubah warna teks agar kontras dengan latar belakang terang */
-}
-
-.tag-purple {
-    background: #6f42c1;
-    /* Ungu */
-}
-
-.tag-grey {
-    background: #6c757d;
-    /* Abu-abu */
-}
-
-/* Jika Anda ingin opacity yang sama seperti default Anda */
-.tag-blue-alpha {
-    background: rgba(0, 123, 255, 0.15);
-    color: #007bff;
-    /* Teks warna biru */
-}
-
-.tag-green-alpha {
-    background: rgba(40, 167, 69, 0.15);
-    color: #28a745;
-    /* Teks warna hijau */
-}
-
-/* ...dan seterusnya untuk warna lain jika ingin efek transparansi */
-
-.project-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
+/* Insight Quote */
+.insight-quote {
+    border-left: 4px solid #FCB2A7;
+    /* Warna aksen */
+    padding-left: 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-style: italic;
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Penyesuaian untuk layar kecil */
-@media (max-width: 992px) {
-    .project-detail-container {
-        padding: 40px 20px;
-    }
-
-    .project-info h1 {
-        font-size: 2.2rem;
-    }
-
-    .project-gallery {
-        max-width: 100%;
-    }
+/* Pillars Section */
+.pillar-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    height: 100%;
 }
 
+.pillar-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+    /* filter: invert(1) agar ikon putih */
+}
+
+.pillar-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Final Gallery */
+.final-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Styling dasar gambar di galeri */
+.final-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Mengubah kursor menjadi tangan */
+    transition: all 0.3s ease;
+    /* Transisi untuk semua properti */
+}
+
+/* Efek saat gambar di-hover */
+.final-gallery img:hover {
+    transform: translateY(-8px) scale(1.03);
+    /* Mengangkat dan sedikit membesar */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    /* Bayangan lebih kuat */
+}
+
+/* Back Link */
 .back-link {
     display: inline-block;
-    margin-top: 30px;
-    color: #ffc107;
+    color: #FCB2A7;
+    /* Warna aksen */
     text-decoration: none;
     font-weight: 600;
 }
 
 .back-link:hover {
     text-decoration: underline;
+    color: #fff;
 }
