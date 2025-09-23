@@ -50,7 +50,7 @@ body {
 
 /* Hero Section */
 .portfolio-hero {
-  padding: 100px 20px 30px; 
+  padding: 50px 20px 30px; 
   margin-bottom: 5px;
 
 }
@@ -71,6 +71,7 @@ body {
 /* Tabs */
 .tabs {
   margin-bottom: 30px;
+  padding-bottom: 100px;
 }
 
 .tabs input {
@@ -100,7 +101,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
+  margin-top: 0.6rem;
   position: relative;
   /* DITAMBAHKAN: Untuk menampung konten yang posisinya absolut */
   min-height: 250px;
