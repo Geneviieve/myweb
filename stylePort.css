@@ -43,7 +43,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: url('assets/BGNavy.png') no-repeat center center fixed;
   background-size: cover;
-  margin: 0;
+  margin: 30px;
   color: white;
   text-align: center;
 }
@@ -68,6 +68,10 @@ body {
   opacity: 0.9;
 }
 
+
+.portfolio-section {
+    padding-bottom: 20rem; 
+}
 /* Tabs */
 .tabs {
   margin-bottom: 30px;
@@ -293,46 +297,4 @@ body {
 html {
   scrollbar-width: thin; /* Options: 'auto', 'thin', 'none' */
   scrollbar-color: rgba(252, 178, 167, 0.6) #0D1424; /* thumb color track color */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================================ */
-/* ===== CSS UNTUK PAGE TRANSITION ===== */
-/* ================================ */
-
-/* Mengatur transisi untuk elemen utama */
-.transition-fade {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.4s, transform 0.4s;
-}
-
-/* Saat halaman akan keluar */
-html.is-leaving .transition-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  /* Konten lama sedikit turun saat menghilang */
-}
-
-/* Saat halaman baru akan masuk */
-html.is-animating .transition-fade {
-  opacity: 0;
-  transform: translateY(-20px);
-  /* Konten baru sedikit naik saat muncul */
 }

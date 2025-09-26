@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Motivational Quote Analysis - My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleUIUX.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-glass">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="index.html">Home</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Motivational Quote Analysis</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="swup" class="transition-fade">
+        <header class="project-hero container-fluid">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-md-7">
+                        <img src="portfodetails/mlPre2.png" alt="Motivational Quote Project Hero" class="ml-hero-image">
+                    </div>
+
+                    <div class="col-md-5 text-start">
+                        <span class="tag-case-study">Natural Language Processing</span>
+                        <h1>Motivational Quote Analysis</h1>
+                        <p class="lead">Exploring the intersection of text classification and positive psychology by building models that detect and categorize motivational quotes.</p>
+                        <a href="https://github.com/Geneviieve/NaturalLanguageProcessing_FinPro" class="github-button" target="_blank" rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="project-content container">
+
+            <section class="case-study-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Project Goal</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>The goal of this project is to analyze text data and determine whether a sentence is a motivational quote. 
+                        If it is, the model further classifies it into specific motivational themes such as resilience, perseverance, growth, or positivity.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>The Brief & Challenge</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>Inspirational and motivational content is everywhere online, but automatically detecting and categorizing it requires more than just keyword matching. 
+                        Quotes often carry nuanced meaning, and models must capture context to avoid misclassification.</p>
+                        <p>The challenge was to design a system that not only identifies motivational text but also groups it into meaningful categories that align with common motivational themes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Process & Outcome</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>The project used a two-model pipeline: 
+                        the first model detects whether the input is a motivational quote or not, 
+                        and the second model classifies motivational quotes into predefined categories.</p>
+                        <p>Both models were trained using labeled datasets, pre-trained embeddings, and standard evaluation metrics like accuracy, precision, recall, and F1-score. 
+                        Through this process, I gained deeper experience in text classification workflows and model evaluation in NLP.</p>
+                        <blockquote class="insight-quote">
+                            Not all text is motivational, but when it is—this model makes sure the message is recognized and categorized.
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section text-center">
+                <h2>Sample Workflow</h2>
+                <p class="lead text-white-50 mx-auto" style="max-width: 700px;">
+                    Below is a simplified diagram of how the two-model pipeline processes input text. 
+                    The full training notebooks and evaluation reports are available on GitHub.
+                </p>
+
+                <img src="previews/sentimentanalysis.PNG" alt="Motivational Quote Pipeline Example" class="img-fluid rounded my-4 process-image">
+
+                <a href="https://github.com/Geneviieve/Motivational-Quote-Analysis" class="github-button" target="_blank" rel="noopener noreferrer">
+                    View Full Project on GitHub
+                </a>
+            </section>
+
+            <div class="text-center mt-5">
+                <a href="portfolio.html" class="back-link">← Back to All Projects</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

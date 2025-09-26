@@ -36,6 +36,39 @@ body {
   transform: translateX(10%); /* Geser ke kanan sebesar 3% dari lebarnya sendiri */
 }
 
+/* -- Style untuk Glassmorphism Button -- */
+
+.btn-glass {
+  /* Tampilan Dasar */
+  background: rgba(255, 255, 255, 0.1); /* Latar belakang transparan tipis */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px; /* Membuat sudut sangat membulat (pill shape) */
+  padding: 12px 30px;
+  color: #ffffff; /* Warna teks putih */
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block; /* Agar padding dan margin berfungsi baik */
+
+  /* Efek Kaca */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Untuk support browser Safari */
+
+  /* Transisi untuk hover effect */
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  /* Efek saat kursor mouse di atas button */
+  background: rgba(255, 255, 255, 0.2); /* Latar belakang sedikit lebih terang */
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05); /* Sedikit membesar agar terasa interaktif */
+  cursor: pointer;
+}
+
+.btn-glass .fa-github {
+    /* Memberi sedikit jarak antara ikon dan teks */
+    margin-right: 8px;
+}
 
 .animated-photo-stack {
   position: relative;
