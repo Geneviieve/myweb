@@ -9,6 +9,7 @@ body {
 .hero {
   padding-top: 6rem;   /* geser ke bawah */
   padding-bottom: 4rem; 
+  padding-left: 15rem; 
 }
 
 .hero h1 {
