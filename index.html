@@ -23,28 +23,31 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-glass">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
+                aria-controls="navbarNavContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- Left (Home + Portfolio) -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold active" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarNavContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
+                    </li>
+                </ul>
 
-            <!-- Right (Social Icons) -->
-            <div class="d-flex align-items-center">
-                <a href="https://www.linkedin.com/in/marsha-nandana/" target="_blank">
-                    <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="https://github.com/Geneviieve" target="_blank">
-                    <img src="assets/github.png" alt="GitHub" class="social-icon">
-                </a>
+                <div class="d-flex align-items-center">
+                    <a href="https://www.linkedin.com/in/marsha-nandana/" target="_blank">
+                        <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/Geneviieve" target="_blank">
+                        <img src="assets/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
             </div>
-
         </div>
     </nav>
 
@@ -52,7 +55,7 @@
     <section class="container-fluid mt-5 pt-5 hero">
         <div class="row align-items-center">
 
-            <div class="col-md-6 offset-md-1">
+            <div class="col-md-6 offset-md-1 text-center text-md-start">
                 <h1 class="fw-bold">Coucou, I'm Marsha</h1>
                 <h3 class="fw-semibold">
                     Data Science & Analytics | Machine Learning | User Experience (UX)
@@ -69,7 +72,7 @@
                 </a>
             </div>
 
-            <div class="col-md-5 photo-container">
+            <div class="col-md-5 photo-container mt-5 mt-md-0">
                 <div class="animated-photo-stack">
                     <div class="shape shape-1"></div>
                     <div class="shape shape-2"></div>
@@ -228,7 +231,7 @@
                             <div class="skill-item">
                                 <img src="assets/logos/powerbi.png" alt="Power BI" class="skill-icon" title="Power BI">
                             </div>
-                            
+
 
 
 

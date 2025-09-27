@@ -11,18 +11,36 @@
 </head>
 
 <body>
+
+
     <nav class="navbar navbar-expand-lg navbar-glass">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="index.html">Home</a>
-                </li>
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
-                    <span class="breadcrumb-separator">></span>
-                    <span class="breadcrumb-current">Customer Churn Detector</span>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
+                aria-controls="navbarNavContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">Customer Churn Detector</span>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <a href="https://www.linkedin.com/in/marsha-nandana/" target="_blank">
+                        <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/Geneviieve" target="_blank">
+                        <img src="assets/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -40,8 +58,8 @@
                             class="tag-case-study">Prediction</span> <span class="tag-case-study">Business</span>
                         <h1>Customer Churn Detector</h1>
                         <p class="lead">A personal exploration project using cutomer churn data from kaggle.</p>
-                        <a href="https://github.com/Geneviieve/customer-churn-detector"
-                            class="github-button" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Geneviieve/customer-churn-detector" class="github-button"
+                            target="_blank" rel="noopener noreferrer">
                             View on GitHub
                         </a>
                     </div>
@@ -58,7 +76,9 @@
                         <h2>Project Goal</h2>
                     </div>
                     <div class="col-md-8">
-                        <p>The main goal is to build and evaluate a machine learning model that can accurately identify customers at high risk of churning. With early identification, the company can take targeted retention actions.</p>
+                        <p>The main goal is to build and evaluate a machine learning model that can accurately identify
+                            customers at high risk of churning. With early identification, the company can take targeted
+                            retention actions.</p>
                     </div>
                 </div>
             </section>
@@ -69,7 +89,9 @@
                         <h2>The Brief & Challenge</h2>
                     </div>
                     <div class="col-md-8">
-                        <p>The cost of retaining existing customers is far lower than acquiring new ones. The challenge was to analyze historical customer data to find hidden patterns indicating an intent to churn, allowing for intervention before the customer actually leaves.</p>
+                        <p>The cost of retaining existing customers is far lower than acquiring new ones. The challenge
+                            was to analyze historical customer data to find hidden patterns indicating an intent to
+                            churn, allowing for intervention before the customer actually leaves.</p>
                     </div>
                 </div>
             </section>
@@ -80,21 +102,23 @@
                         <h2>Process & Outcome</h2>
                     </div>
                     <div class="col-md-8">
-                        <p>The process started with data cleaning, Exploratory Data Analysis (EDA) for insights, and feature engineering. Several classification models, such as Logistic Regression, Random Forest, and XGB, were built and their performance was compared.</p>
-                        <p>Early churn detection helps proactively target at-risk customers with special offers or services to improve retention.</p>
+                        <p>The process started with data cleaning, Exploratory Data Analysis (EDA) for insights, and
+                            feature engineering. Several classification models, such as Logistic Regression, Random
+                            Forest, and XGB, were built and their performance was compared.</p>
+                        <p>Early churn detection helps proactively target at-risk customers with special offers or
+                            services to improve retention.</p>
                     </div>
                 </div>
             </section>
 
-            
+
             <section class="case-study-section text-center">
                 <h2>Model Performance Evaluation</h2>
                 <p class="lead text-white-50 mx-auto" style="max-width: 700px;">
                     Trained 3 different baseline model.
                 </p>
 
-                <img src="previews/chu.PNG" alt="ROC AUC Curve Comparison"
-                    class="img-fluid rounded my-4 process-image">
+                <img src="previews/chu.PNG" alt="ROC AUC Curve Comparison" class="img-fluid rounded my-4 process-image">
 
                 <a href="https://github.com/Geneviieve/customer-churn-detector" class="github-button" target="_blank"
                     rel="noopener noreferrer">

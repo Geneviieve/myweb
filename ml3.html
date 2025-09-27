@@ -11,18 +11,37 @@
 </head>
 
 <body>
+
+
+
     <nav class="navbar navbar-expand-lg navbar-glass">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="index.html">Home</a>
-                </li>
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
-                    <span class="breadcrumb-separator">></span>
-                    <span class="breadcrumb-current">Spotify Song Recommender System</span>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
+                aria-controls="navbarNavContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link fw-semibold" href="portfolio.html">Portfolio</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">Spotify Song Recommender System</span>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <a href="https://www.linkedin.com/in/marsha-nandana/" target="_blank">
+                        <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/Geneviieve" target="_blank">
+                        <img src="assets/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -93,16 +112,18 @@
                         <p>The project utilized the "30,000 Spotify Songs" dataset from Kaggle, which includes various
                             audio features for each track. By employing content-based filtering techniques, the system
                             calculates the similarity between songs based on these features. T</p>
-                        <p>The outcome is a functional recommender system that provides users with personalized song suggestions.</p>
+                        <p>The outcome is a functional recommender system that provides users with personalized song
+                            suggestions.</p>
                     </div>
                 </div>
             </section>
 
-            
+
             <section class="case-study-section text-center">
                 <h2>Sample Workflow</h2>
                 <p class="lead text-white-50 mx-auto" style="max-width: 700px;">
-                    The image below shows how the system generates personalized song recommendations based on a selected track. Full notebooks and evaluation reports are available on GitHub.
+                    The image below shows how the system generates personalized song recommendations based on a selected
+                    track. Full notebooks and evaluation reports are available on GitHub.
                 </p>
 
                 <img src="previews/spot.PNG" alt="AC Recommendation Pipeline Example"
